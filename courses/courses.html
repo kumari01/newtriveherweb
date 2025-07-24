@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TriveHer - Girls Who Code</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Spline for 3D elements -->
+    <script type="module" src="https://unpkg.com/@splinetool/viewer@0.9.474/build/spline-viewer.js"></script>
+
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js for 3D effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.154.0/three.min.js"></script>
+
+    <!-- Poppins Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg z-50 py-4">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+      <a href="javascript:void(0)" class="flex items-center gap-2">
+        <div class="text-3xl font-bold flex items-center gap-1 logo-text logo">
+          <span class="gradient-text">&lt;/&gt;</span>
+          <span>Trive<span class="text-purple-600">Her</span></span>
+        </div>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="../main/index.html" class="nav-link nav-hide-on-tab">Home</a>
+        <a href="../courses/courses.html" class="nav-link nav-hide-on-tab">Courses</a>
+        <a href="../mentor/mentor.html" class="nav-link nav-hide-on-tab">Mentors</a>
+        <a href="../community/community.html" class="nav-link nav-hide-on-tab">Community</a>
+        <a href="../resources/resources.html" class="nav-link relative nav-hide-on-tab">
+          Resources
+          <div class="notification-badge" id="notificationBadge">1</div>
+        </a>
+      </div>
+
+      <div class="flex items-center gap-4 nav-button-group">
+        <button class="hidden md:inline-block px-4 py-2 border-2 border-purple-500 text-purple-600 text-sm font-medium rounded-full hover:bg-purple-50 transition-all nav-login" id="loginBtn">
+          Log In
+        </button>
+        <button class="px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded-full hover:bg-purple-500 transition-all nav-signup" id="signupBtn">
+          Sign Up
+        </button>
+        <!-- ✅ Shows only in tab view -->
+        <button id="openDashboard" class="inline-block lg:hidden text-gray-700 focus:outline-none nav-dashboard">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+   <!-- Right-side Dashboard -->
+    <div id="dashboardPanel" class="fixed top-0 right-0 h-full w-72 bg-white shadow-lg transform translate-x-full transition-transform duration-300 z-50">
+
+      <div class="p-6 bg-white opacity-100">
+        <h3 class="text-xl font-bold mb-4 text-gray-800">Dashboard</h3>
+        <a href="javascript:void(0)" id="openLoginFromDashboard" class="block py-2 text-gray-800 font-medium nav-link">
+          Login
+        </a>
+        <a href="../main/index.html" class="block py-2 text-gray-800 font-medium nav-link md:hidden lg:block">Home</a>
+        <a href="../courses/courses.html" class="block py-2 text-gray-800 font-medium nav-link">Courses</a>
+        <a href="../mentor/mentor.html" class="block py-2 text-gray-800 font-medium nav-link">Mentors</a>
+        <a href="../community/community.html" class="block py-2 text-gray-800 font-medium nav-link">Community</a>
+        <a href="../resources/resources.html" class="block py-2 text-gray-800 font-medium nav-link relative">
+          Resources <div class="notification-badge">1</div>
+        </a>
+
+        <button id="closeDashboard" class="mt-6 px-4 py-2 bg-purple-600 text-white rounded-full w-full">Close</button>
+      </div>
+    </div>
+  </nav>
+
+  <section id="courses" class="mt-20 py-5 bg-gray-50/50 relative">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10 sm:mb-16">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 gradient-text">Our Courses</h2>
+            <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+          Begin your coding journey with our expertly crafted courses designed specifically for girls who code.
+            </p>
+         </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Python Basics Course -->
+        <div class="feature-card p-6 sm:p-7 lg:p-8">
+          <div class="feature-icon">
+            <i class="fab fa-python"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Python Basics</h3>
+          <p class="text-gray-600 mb-6">Learn the fundamentals of Python programming, including variables, data types,
+            control flow, functions, and more. Perfect for beginners with no prior coding experience.</p>
+          <div class="flex gap-3 mb-6">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Beginner</span>
+            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">8 weeks</span>
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Certificate</span>
+          </div>
+          <div class="flex gap-4 items-center mb-6">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">₹499</span>
+            <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">3+ Mini Projects</span>
+          </div>
+          <button class="enroll-button flex items-center justify-center gap-2 btn-primary" data-course="python-basics">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Enroll Now</span>
+          </button>
+
+        </div>
+
+        <!-- Python with NumPy & Pandas Course -->
+        <div class="feature-card p-6 sm:p-7 lg:p-8">
+          <div class="feature-icon">
+            <i class="fas fa-chart-line"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Python with NumPy & Pandas</h3>
+          <p class="text-gray-600 mb-6">Advance your Python skills with real-world data analysis using NumPy and Pandas. Learn to clean, manipulate, and visualize data effectively.</p>
+          <div class="flex gap-3 mb-6">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Intermediate</span>
+            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">2 weeks</span>
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Certificate</span>
+          </div>
+          <div class="flex gap-4 items-center mb-6">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">₹659</span>
+            <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">3+ Mini Projects</span>
+
+          </div>
+          <button class="enroll-button flex items-center justify-center gap-2 btn-primary" data-course="python-numpy-pandas">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Enroll Now</span>
+          </button>
+
+        </div>
+        <!-- basic c program-->
+        <div class="feature-card p-6 sm:p-7 lg:p-8">
+          <div class="feature-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="text-2xl font-bold mb-4">Basic C Programming</h3>
+          <p class="text-gray-600 mb-6">Learn the basics of C programming, including syntax, data types, control structures, and functions. Ideal for beginners looking to start their coding journey.</p>
+          <div class="flex gap-3 mb-6">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Beginner</span>
+            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">6 weeks</span>
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Certificate</span>
+          </div>
+          <div class="flex gap-4 items-center mb-6">
+            <!-- <button class="btn-primary text-base sm:text-lg px-6 py-3 enroll-button" data-course="basic-c-programming">Enroll Now</button> -->
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">₹499</span>
+            <span class="bg-cyan-100 text-cyan-600 s px-3 py-1 rounded-full text-sm">3+ Mini Projects</span>
+
+          </div>
+          <button class="enroll-button flex items-center justify-center gap-2 btn-primary" data-course="basic-c-programming">
+            <i class="fas fa-graduation-cap"></i>
+            <span>Enroll Now</span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Course Detail Section -->
+  <section id="course-detail" class="py-16 bg-gray-50/50 hidden">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white p-6 sm:p-8 lg:p-10 rounded-3xl shadow-lg">
+        <a href="#courses" id="back-to-courses" class="inline-flex items-center gap-2 text-purple-600 mb-6 hover:text-white hover:bg-purple-600 px-4 py-2 rounded-full transition-all">
+          <i class="fas fa-arrow-left"></i>
+          <span>Back to Courses</span>
+        </a>
+        <div id="course-detail-content"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:flex lg:gap-10">
+        <div class="flex flex-col basis-1/3">
+          <a href="javascript:void(0)" class="flex items-center gap-2 mb-6">
+            <div class="text-3xl font-bold">
+              <span class="gradient-text">&lt;/&gt;</span>
+              <span>Trive<span class="text-purple-600">Her</span></span>
+            </div>
+          </a>
+          <p class="text-gray-600 mb-6">Empowering girls to become the tech leaders of tomorrow through accessible and engaging coding education.</p>
+          <div class="flex gap-4">
+            <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all">
+              <i class="fab fa-discord"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="flex flex-col basis-1/3">
+          <h3 class="font-bold text-lg mb-6">Quick Links</h3>
+          <ul class="space-y-4">
+           <li><a href="../main/index.html" class="text-gray-600 hover:text-purple-600">Home</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">About Us</a></li>
+            <li><a href="../courses/courses.html" class="text-gray-600 hover:text-purple-600">Courses</a></li>
+            <li><a href="../community/community.html" class="text-gray-600 hover:text-purple-600">Community</a></li>
+          </ul>
+        </div>
+
+
+        <div class="flex flex-col basis-1/3">
+          <h3 class="font-bold text-lg mb-6">Subscribe</h3>
+          <p class="text-gray-600 mb-4">Stay updated with our latest courses and events</p>
+          <form class="mb-4 w-full">
+            <div class="flex">
+              <input type="email" placeholder="Your email" class="px-4 py-3 rounded-l-lg border-2 border-r-0 border-gray-200 focus:outline-none focus:border-purple-400 w-full max-w-xs" />
+              <button type="submit" class="bg-purple-600 text-white px-4 py-3 rounded-r-lg hover:bg-purple-700">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+          <p class="text-gray-500 text-sm">By subscribing, you agree to our Privacy Policy</p>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-600">© 2025 TriveHer - Girls Who Code. All rights reserved.</p>
+        <div class="flex gap-6 mt-4 md:mt-0">
+          <a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Privacy Policy</a>
+          <a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Terms of Service</a>
+          <a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+
+
+</body>
+</html>

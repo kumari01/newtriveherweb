@@ -167,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+
   // --- Close modals on clicking outside ---
   window.addEventListener("click", (e) => {
     if (e.target === signupModal) closeModal(signupModal);
@@ -175,7 +176,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.target === otpModal) closeModal(otpModal);
     if (e.target === forgotPasswordModal) closeModal(forgotPasswordModal);
     if (e.target === newPasswordModal) closeModal(newPasswordModal);
+    if (e.target === dashboardPanel) closeModal(dashboardPanel);
   });
+
+
 
   // ============================
   // === Signup/OTP Handlers ====
@@ -242,7 +246,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (otpEmailInfo) otpEmailInfo.textContent = "";
             pendingSignupEmail = "";
             updateAuthUI();
-            window.location.href = "dashboard.html";
+            window.location.href = "../dashboard.html";
           }, 1200);
         } else {
           showFormMessage(otpForm, data.message || "OTP verification failed.");

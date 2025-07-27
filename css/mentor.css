@@ -181,7 +181,7 @@ body {
 	left: 0;
 	width: 0;
 	height: 2px;
-	background: linear-gradient(90deg, #7b38e0 0%, #503f9d 100%);
+	background: linear-gradient(90deg, #7b38e0 0%, #ff7eb9 100%); transition: width .3s;
 	transition: width 0.3s ease;
 }
 
@@ -365,16 +365,16 @@ body {
 	  }
 }
 
-/* Tablet and medium screen styles (768px to 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
   .scene-container {
     width: 400px !important;
     height: 400px !important;
     margin-top: -40px !important;
   }
-
+}
+@media (min-width: 768px) and (max-width: 1023px) {
   .hero-heading {
-    font-size: 2rem;
+    font-size: 1.8rem; /* smaller heading */
   }
 
   .hero-content p {
@@ -384,48 +384,24 @@ body {
   .btn1-getstarted {
     font-size: 0.95rem;
   }
-
+}
+@media (min-width: 768px) and (max-width: 1023px) {
   #loginBtn, #signupBtn {
-    margin-top: 8px;
+	margin-top: 8px;
     padding: 6px 14px;
     font-size: 0.85rem;
-  }
 
+  }
   .nav-button-group {
     gap: 10px;
     flex-wrap: wrap;
     justify-content: flex-end;
   }
-
-  .logo {
-    font-size: x-large !important;
-    padding-top: 15px !important;
+  .logo{
+	font-size:larger !important;
+	padding-top:15px !important;
   }
-
-  .hero-section {
-    margin-top: 100px !important;
+  .hero-section{
+	margin-top: 100px !important;
   }
-}
-
-/* Hide all except login, signup, dashboard on tablets */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .nav-hide-on-tab {
-    display: none !important;
-  }
-
-  .nav-login,
-  .nav-signup,
-  .nav-dashboard {
-    display: inline-block !important;
-  }
-    #dashboardPanel {
-    display: block !important;
-  }
-}
-@keyframes marquee {
-	0%   { transform: translateX(0); }
-	100% { transform: translateX(-50%); }
-}
-.animate-marquee {
-	animation: marquee 40s linear infinite;
 }

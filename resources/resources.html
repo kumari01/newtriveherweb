@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg z-50 py-4">
@@ -79,168 +79,227 @@
       </div>
     </div>
   </nav>
-    <section id="resources" class="mt-20 py-5 bg-gray-50/50 relative">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10 sm:mb-10">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 gradient-text">Free Learning Resources</h2>
-            <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
-                Explore curated PDFs, roadmaps, and cheat sheets to guide your coding journey efficiently.
-            </p>
+  <section id="resources" class="mt-20 py-5 bg-gray-50/50 relative">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10 sm:mb-10">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 gradient-text">
+          Free Learning Resources
+        </h2>
+        <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+          Explore curated PDFs, roadmaps, and cheat sheets to guide your coding journey efficiently.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Python Developer Roadmap -->
+        <div class="feature-card p-6 sm:p-7 lg:p-8">
+          <h3 class="text-2xl font-bold mb-2">Python Developer Roadmap</h3>
+          <p class="text-gray-600 mb-6">
+            A visual PDF roadmap covering core Python concepts, libraries, and tools to become a proficient developer.
+          </p>
+          <div class="flex gap-3 mb-6">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Beginner</span>
+          </div>
+          <a href="python-developer-roadmap.docx" download class="btn-primary text-base sm:text-sm px-5 py-2">
+            Download
+          </a>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Python Developer Roadmap -->
-          <div class="feature-card p-6 sm:p-7 lg:p-8">
+        <!-- Data Science Roadmap -->
+        <div class="feature-card p-6 sm:p-7 lg:p-8">
+          <h3 class="text-2xl font-bold mb-4">Data Science Roadmap</h3>
+          <p class="text-gray-600 mb-6">
+            Track your path to becoming a data scientist with this PDF roadmap, covering Python, ML, tools, and projects.
+          </p>
+          <div class="flex gap-3 mb-6">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Intermediate</span>
+          </div>
+          <a href="data-science-roadmap.docx" download class="btn-primary text-base sm:text-sm px-5 py-2">
+            Download
+          </a>
+        </div>
 
-            <h3 class="text-2xl font-bold mb-2">Python Developer Roadmap</h3>
-            <p class="text-gray-600 mb-6">A visual PDF roadmap covering core Python concepts, libraries, and tools to become a proficient developer.</p>
-            <div class="flex gap-3 mb-6">
-                <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
-                <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Beginner</span>
+        <!-- Web Development Roadmap -->
+        <div class="feature-card p-6 sm:p-7 lg:p-8">
+          <h3 class="text-2xl font-bold mb-4">Web Development Roadmap</h3>
+          <p class="text-gray-600 mb-6">
+            An organized visual roadmap covering frontend and backend paths for aspiring web developers.
+          </p>
+          <div class="flex gap-3 mb-6">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">All Levels</span>
+          </div>
+          <a href="path-to-web-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">
+            Download
+          </a>
+        </div>
+
+        <!-- Java Developer Roadmap -->
+        <div class="feature-card p-6 sm:p-7 lg:p-8">
+          <h3 class="text-2xl font-bold mb-4">Java Developer Roadmap</h3>
+          <p class="text-gray-600 mb-4">
+            Covers Java basics, OOPs, frameworks, tools & job prep essentials.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Intermediate</span>
+            <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">Free</span>
+          </div>
+          <a href="java-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">
+            Download
+          </a>
+        </div>
+
+        <!-- Frontend Developer Roadmap -->
+        <div class="feature-card p-6 sm:p-7 lg:p-8">
+          <h3 class="text-2xl font-bold mb-4">Frontend Developer Roadmap</h3>
+          <p class="text-gray-600 mb-4">
+            HTML, CSS, JS, frameworks, tools, and UI design essentials.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Beginner</span>
+            <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">Free</span>
+          </div>
+          <a href="frontend-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">
+            Download
+          </a>
+        </div>
+
+        <!-- Backend Developer Roadmap -->
+        <div class="feature-card p-6 sm:p-7 lg:p-8">
+          <h3 class="text-2xl font-bold mb-4">Backend Developer Roadmap</h3>
+          <p class="text-gray-600 mb-4">
+            Databases, APIs, servers, Node.js, and backend best practices.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Intermediate</span>
+            <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">Free</span>
+          </div>
+          <a href="backend-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">
+            Download
+          </a>
+        </div>
+
+        <!-- Machine Learning Roadmap -->
+        <div class="feature-card p-6 sm:p-7 lg:p-8">
+          <h3 class="text-2xl font-bold mb-4">Machine Learning Roadmap</h3>
+          <p class="text-gray-600 mb-4">
+            Python, data preprocessing, models, projects & ML tools.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Advanced</span>
+            <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">Free</span>
+          </div>
+          <a href="ml-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">
+            Download
+          </a>
+        </div>
+
+        <!-- UI/UX Designer Roadmap -->
+        <div class="feature-card p-6 sm:p-7 lg:p-8">
+          <h3 class="text-2xl font-bold mb-4">UI/UX Designer Roadmap</h3>
+          <p class="text-gray-600 mb-4">
+            Covers design principles, Figma, prototyping, user research & usability testing.
+          </p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
+            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">All Levels</span>
+            <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">Free</span>
+          </div>
+          <a href="uiux-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">
+            Download
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-gray-50 py-16">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:flex lg:gap-10">
+
+        <!-- Brand & Social Links -->
+        <div class="flex flex-col basis-1/3">
+          <a href="javascript:void(0)" class="flex items-center gap-2 mb-6">
+            <div class="text-3xl font-bold">
+              <span class="gradient-text">&lt;/&gt;</span>
+              <span>Trive<span class="text-purple-600">Her</span></span>
             </div>
-            <a href="python-developer-roadmap.docx" download class="btn-primary text-base sm:text-sm px-5 py-2">Download</a>
-          </div>
-
-          <!-- Data Science Roadmap -->
-          <div class="feature-card p-6 sm:p-7 lg:p-8">
-            <h3 class="text-2xl font-bold mb-4">Data Science Roadmap</h3>
-            <p class="text-gray-600 mb-6">Track your path to becoming a data scientist with this PDF roadmap, covering Python, ML, tools, and projects.</p>
-            <div class="flex gap-3 mb-6">
-                <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
-                <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Intermediate</span>
-            </div>
-            <a href="data-science-roadmap.docx" download class="btn-primary text-base sm:text-sm px-5 py-2">Download</a>
-          </div>
-
-          <!-- Web Development Roadmap -->
-          <div class="feature-card p-6 sm:p-7 lg:p-8">
-            <h3 class="text-2xl font-bold mb-4">Web Development Roadmap</h3>
-            <p class="text-gray-600 mb-6">An organized visual roadmap covering frontend and backend paths for aspiring web developers.</p>
-            <div class="flex gap-3 mb-6">
-                <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
-                <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">All Levels</span>
-            </div>
-            <a href="path-to-web-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">Download</a>
-          </div>
-
-          <div class="feature-card p-6 sm:p-7 lg:p-8">
-              <h3 class="text-2xl font-bold mb-4">Java Developer Roadmap</h3>
-              <p class="text-gray-600 mb-4">Covers Java basics, OOPs, frameworks, tools & job prep essentials.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
-                  <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Intermediate</span>
-                  <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">Free</span>
-              </div>
-              <a href="java-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">Download</a>
-          </div>
-
-          <div class="feature-card p-6 sm:p-7 lg:p-8">
-              <h3 class="text-2xl font-bold mb-4">Frontend Developer Roadmap</h3>
-              <p class="text-gray-600 mb-4">HTML, CSS, JS, frameworks, tools, and UI design essentials.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
-                  <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Beginner</span>
-                  <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">Free</span>
-              </div>
-              <a href="frontend-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">Download</a>
-          </div>
-
-          <div class="feature-card p-6 sm:p-7 lg:p-8">
-              <h3 class="text-2xl font-bold mb-4">Backend Developer Roadmap</h3>
-              <p class="text-gray-600 mb-4">Databases, APIs, servers, Node.js, and backend best practices.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
-                  <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Intermediate</span>
-                  <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">Free</span>
-              </div>
-              <a href="backend-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">Download</a>
-          </div>
-
-          <div class="feature-card p-6 sm:p-7 lg:p-8">
-              <h3 class="text-2xl font-bold mb-4">Machine Learning Roadmap</h3>
-              <p class="text-gray-600 mb-4">Python, data preprocessing, models, projects & ML tools.</p>
-              <div class="flex flex-wrap gap-2 mb-4">
-                  <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
-                  <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Advanced</span>
-                  <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">Free</span>
-              </div>
-              <a href="ml-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">Download</a>
-          </div>
-          <div class="feature-card p-6 sm:p-7 lg:p-8">
-            <h3 class="text-2xl font-bold mb-4">UI/UX Designer Roadmap</h3>
-            <p class="text-gray-600 mb-4">Covers design principles, Figma, prototyping, user research & usability testing.</p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Roadmap</span>
-              <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">All Levels</span>
-              <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">Free</span>
-            </div>
-            <a href="uiux-roadmap.pdf" download class="btn-primary text-base sm:text-sm px-5 py-2">Download</a>
+          </a>
+          <p class="text-gray-600 mb-6">
+            Empowering girls to become the tech leaders of tomorrow through accessible and engaging coding education.
+          </p>
+          <div class="flex gap-4">
+            <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all" aria-label="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all" aria-label="Discord">
+              <i class="fab fa-discord"></i>
+            </a>
           </div>
         </div>
-    </section>
-    <footer class="bg-gray-50 py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:flex lg:gap-10">
-                <div class="flex flex-col basis-1/3">
-                    <a href="javascript:void(0)" class="flex items-center gap-2 mb-6">
-                        <div class="text-3xl font-bold">
-                            <span class="gradient-text">&lt;/&gt;</span>
-                            <span>Trive<span class="text-purple-600">Her</span></span>
-                        </div>
-                    </a>
-                    <p class="text-gray-600 mb-6">Empowering girls to become the tech leaders of tomorrow through accessible and engaging coding education.</p>
-                    <div class="flex gap-4">
-                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="javascript:void(0)" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-600 hover:bg-purple-100 hover:text-purple-600 transition-all">
-                            <i class="fab fa-discord"></i>
-                        </a>
-                    </div>
-                </div>
 
-                <div class="flex flex-col basis-1/3">
-                    <h3 class="font-bold text-lg mb-6">Quick Links</h3>
-                    <ul class="space-y-4">
-                        <li><a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Home</a></li>
-                        <li><a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">About Us</a></li>
-                        <li><a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Courses</a></li>
-                        <li><a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Community</a></li>
-                        <li><a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Events</a></li>
-                    </ul>
-                </div>
-
-
-                <div class="flex flex-col basis-1/3">
-                    <h3 class="font-bold text-lg mb-6">Subscribe</h3>
-                    <p class="text-gray-600 mb-4">Stay updated with our latest courses and events</p>
-                    <form class="mb-4 w-full">
-                        <div class="flex">
-                            <input type="email" placeholder="Your email" class="px-4 py-3 rounded-l-lg border-2 border-r-0 border-gray-200 focus:outline-none focus:border-purple-400 w-full max-w-xs" />
-                            <button type="submit" class="bg-purple-600 text-white px-4 py-3 rounded-r-lg hover:bg-purple-700">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </form>
-                    <p class="text-gray-500 text-sm">By subscribing, you agree to our Privacy Policy</p>
-                </div>
-            </div>
-
-            <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-600">© 2025 TriveHer - Girls Who Code. All rights reserved.</p>
-                <div class="flex gap-6 mt-4 md:mt-0">
-                    <a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Privacy Policy</a>
-                    <a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Terms of Service</a>
-                    <a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Contact Us</a>
-                </div>
-            </div>
+        <!-- Quick Links -->
+        <div class="flex flex-col basis-1/3">
+          <h3 class="font-bold text-lg mb-6">Quick Links</h3>
+          <ul class="space-y-4">
+            <li><a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Home</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">About Us</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Courses</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Community</a></li>
+            <li><a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Events</a></li>
+          </ul>
         </div>
-    </footer>
+
+        <!-- Subscribe Form -->
+        <div class="flex flex-col basis-1/3">
+          <h3 class="font-bold text-lg mb-6">Subscribe</h3>
+          <p class="text-gray-600 mb-4">Stay updated with our latest courses and events</p>
+          <form class="mb-4 w-full" aria-label="Subscribe to newsletter">
+            <div class="flex">
+              <input
+                type="email"
+                placeholder="Your email"
+                class="px-4 py-3 rounded-l-lg border-2 border-r-0 border-gray-200 focus:outline-none focus:border-purple-400 w-full max-w-xs"
+                required
+                aria-required="true"
+                aria-label="Email address"
+              />
+              <button type="submit" class="bg-purple-600 text-white px-4 py-3 rounded-r-lg hover:bg-purple-700" aria-label="Subscribe">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </form>
+          <p class="text-gray-500 text-sm">By subscribing, you agree to our Privacy Policy</p>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <p class="text-gray-600">© 2025 TriveHer - Girls Who Code. All rights reserved.</p>
+        <div class="flex gap-6 mt-4 md:mt-0">
+          <a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Privacy Policy</a>
+          <a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Terms of Service</a>
+          <a href="javascript:void(0)" class="text-gray-600 hover:text-purple-600">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
 </body>
 </html>

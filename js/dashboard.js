@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   logoutBtn?.addEventListener("click", () => {
     localStorage.removeItem("thriveher_token");
     localStorage.removeItem("thriveher_user");
+    window.location.href = "../index.html";
     updateAuthUI();
   });
 });

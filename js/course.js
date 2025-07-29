@@ -131,33 +131,60 @@ function showCourseDetail(courseId) {
       </div>
     </div>
   `;
+}
+
+document.addEventListener("click", function(e) {
+  const button = document.querySelector('.enroll-now-button');
+  if (button) {
+    const courseId = button.dataset.course;
+    if (!courseId) return;
+
+    const token = localStorage.getItem("thriveher_token");
+    if (token) {
+      // User logged in - show course detail
+      showCourseDetail(courseId);
+      history.pushState(null, "", `#course-${courseId}`);
+    } else {
+      // User not logged in - show login modal, do NOT navigate
+      const loginModal = document.getElementById('loginModal');
+      if (typeof openModal === "function" && loginModal) {
+        openModal(loginModal);
+      } else if (loginModal) {
+        loginModal.classList.add('show');
+      }
+      window.scrollTo(0, detailSection.offsetTop - 80);
+    }
+    e.preventDefault();
+  }
+});
+
 
   // Re-attach enroll event for the dynamic button
-  const enrollNowBtn = detailContent.querySelector('.enroll-now-button');
-  if (enrollNowBtn) {
-    enrollNowBtn.addEventListener('click', function (e) {
-      e.preventDefault();
+// const enrollNowBtn = detailContent.querySelector('.enroll-now-button');
+//   if (enrollNowBtn) {
+//     enrollNowBtn.addEventListener('click', function (e) {
+//       e.preventDefault();
 
-      const token = localStorage.getItem("thriveher_token");
-      if (token) {
-        // User is logged in: allow enroll (real API or demo alert)
-        alert(`You have successfully enrolled in: ${course.title}`);
-        // Optionally: call API, disable button, or show confirmation
-      } else {
-        // Not logged in: show login modal
-        const loginModal = document.getElementById('loginModal');
-        if (typeof openModal === "function" && loginModal) {
-          openModal(loginModal);
-        } else if (loginModal) {
-          loginModal.classList.add('show'); // fallback
-        }
-      }
-    });
-  }
+//       const token = localStorage.getItem("thriveher_token");
+//       if (token) {
+//         // User is logged in: allow enroll (real API or demo alert)
+//         alert(`You have successfully enrolled in: ${course.title}`);
+//         // Optionally: call API, disable button, or show confirmation
+//       } else {
+//         // Not logged in: show login modal
+//         const loginModal = document.getElementById('loginModal');
+//         if (typeof openModal === "function" && loginModal) {
+//           openModal(loginModal);
+//         } else if (loginModal) {
+//           loginModal.classList.add('show'); // fallback
+//         }
+//       }
+//     });
+//   }
 
-  // Scroll to details
-  window.scrollTo(0, detailSection.offsetTop - 80);
-}
+//   // Scroll to details
+//   window.scrollTo(0, detailSection.offsetTop - 80);
+// }
 
 // Load detail on page load if hash exists
 window.addEventListener('DOMContentLoaded', () => {
@@ -168,22 +195,40 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-document.getElementById("back-to-courses").addEventListener("click", function (e) {
-  e.preventDefault();
+document.addEventListener("DOMContentLoaded", () => {
+  const backBtn = document.getElementById("back-to-courses");
+  const closeLoginBtn = document.getElementById("closeLoginModal");
 
-  // Hide course detail section
-  document.getElementById("course-detail").classList.add("hidden");
-  // Show all other sections (especially #courses)
-  document.querySelectorAll("section").forEach(section => {
-    if (section.id !== "course-detail") {
-      section.classList.remove("hidden");
+  if (closeLoginBtn && loginModal) {
+    closeLoginBtn.addEventListener("click", () => {
+      loginModal.classList.remove("show");
+    });
+  }
+
+  window.addEventListener("click", (e) => {
+    if (e.target === loginModal) {
+      loginModal.classList.remove("show");
     }
   });
-  // Scroll to #courses section
-  const courseSection = document.getElementById("courses");
-  if (courseSection) {
-    courseSection.scrollIntoView({ behavior: "smooth" });
+
+  if (backBtn) {
+    backBtn.addEventListener("click", function(e) {
+      e.preventDefault();
+
+      document.getElementById("course-detail").classList.add("hidden");
+
+      document.querySelectorAll("section").forEach(section => {
+        if (section.id !== "course-detail") {
+          section.classList.remove("hidden");
+        }
+      });
+
+      const courseSection = document.getElementById("courses");
+      if (courseSection) {
+        courseSection.scrollIntoView({ behavior: "smooth" });
+      }
+
+      history.replaceState(null, document.title, window.location.pathname + window.location.search);
+    });
   }
-  // Remove hash from URL
-  history.pushState("", document.title, window.location.pathname + window.location.search);
 });

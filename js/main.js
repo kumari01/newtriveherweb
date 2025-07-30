@@ -108,6 +108,19 @@ document.addEventListener("DOMContentLoaded", function () {
       openModal(signupModal);
     });
   }
+
+  // Home navigation: redirect to index if not logged in
+  const homeNavLink = document.getElementById('homeNavLink');
+  if (homeNavLink) {
+    homeNavLink.addEventListener('click', function(e) {
+      const isLoggedIn = !!localStorage.getItem("thriveher_token");
+      if (!isLoggedIn) {
+        e.preventDefault();
+        window.location.href = "index.html"; // adjust if needed
+      }
+    });
+  }
+
   // -- New Password Reset Modal & Form --
   const newPasswordForm = document.getElementById("newPasswordForm");
   const newPasswordInput = document.getElementById("newPassword");
@@ -167,6 +180,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  //opening the login modal from dashboard
+  const openLoginFromDashboard = document.getElementById("openLoginFromDashboard");
+  if (openLoginFromDashboard && loginModal) {
+    openLoginFromDashboard.addEventListener("click", () => {
+      closeModal(dashboardPanel);
+      openModal(loginModal);
+    });
+  }
 
   // --- Close modals on clicking outside ---
   window.addEventListener("click", (e) => {

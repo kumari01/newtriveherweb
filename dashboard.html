@@ -33,7 +33,7 @@
 
       <!-- Desktop Navigation Links -->
       <div class="hidden md:flex items-center gap-8">
-        <a href="../main/index.html" class="nav-link nav-hide-on-tab">Home</a>
+        <a href="dashboard.html" class="nav-link nav-hide-on-tab">Home</a>
         <a href="../courses/courses.html" class="nav-link nav-hide-on-tab">Courses</a>
         <a href="../mentor/mentor.html" class="nav-link nav-hide-on-tab">Mentors</a>
         <a href="../community/community.html" class="nav-link nav-hide-on-tab">Community</a>
@@ -58,7 +58,7 @@
         </button>
 
         <!-- Hamburger for Mobile Menu -->
-        <button class="md:hidden text-gray-700 focus:outline-none" aria-label="Open Menu">
+        <button class="md:hidden text-gray-700 focus:outline-none" id="openDashboard" aria-label="Open Menu">
           <i class="fas fa-bars text-2xl"></i>
         </button>
 
@@ -77,13 +77,13 @@
         </button>
 
         <!-- Dashboard button only visible on tablet -->
-        <button
+        <!-- <button
           id="openDashboard"
           class="inline-block lg:hidden text-gray-700 focus:outline-none nav-dashboard py-7"
           aria-label="Open Dashboard"
         >
           <i class="fas fa-bars text-2xl"></i>
-        </button>
+        </button> -->
       </div>
     </div>
 
@@ -227,6 +227,6 @@
   </footer>
 
     <script src = "../js/dashboard.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="../js/main.js"></script>
   </body>
 </html>

@@ -1,57 +1,57 @@
 const courseData = {
-    'python-basics': {
-        title: 'Python Basics',
-        description: 'Learn the fundamentals of Python programming, including variables, data types, control flow, functions, and more.',
-        level: 'Beginner',
-        duration: '8 weeks',
-        certification: true,
-        qrCode: '/assets/qr-python.png',
-        mentors: [
-          {
-            name: 'Kumari',
-            photo: 'https://cdn.pixabay.com/photo/2018/01/15/07/51/woman-3083377_960_720.jpg',
-            bio: 'Senior Python Developer with 8+ years experience teaching coding to beginners.'
-          },
-          {
-            name: 'Jane Doe',
-            photo: 'https://cdn.pixabay.com/photo/2018/01/15/07/51/woman-3083377_960_720.jpg',
-            bio: 'Senior Python Developer with 8+ years experience teaching coding to beginners.'
-          }
-        ]
+  'python-basics': {
+    title: 'Python Basics',
+    description: 'Learn the fundamentals of Python programming, including variables, data types, control flow, functions, and more.',
+    level: 'Beginner',
+    duration: '8 weeks',
+    certification: true,
+    qrCode: '/assets/qr-python.png',
+    mentors: [
+      {
+        name: 'Kumari',
+        photo: 'https://cdn.pixabay.com/photo/2018/01/15/07/51/woman-3083377_960_720.jpg',
+        bio: 'Senior Python Developer with 8+ years experience teaching coding to beginners.'
       },
-      'python-numpy-pandas': {
-        title: 'Python with NumPy & Pandas',
-        description: 'Data analysis using NumPy and Pandas.',
-        level: 'Intermediate',
-        duration: '2 weeks',
-        certification: true,
-        qrCode: '/assets/qr-data.png',
-        mentors: [
-          {
-            name: 'Maria Chen',
-            photo: 'https://cdn.pixabay.com/photo/2018/01/15/07/51/woman-3083376_960_720.jpg',
-            bio: 'Data Scientist with expertise in Pandas and data viz.'
-          }
-        ]
-      },
-      'basic-c-programming': {
-        title: 'Basic C Programming',
-        description: 'Learn C syntax, data types, control structures, and functions. Ideal for beginners starting coding.',
-        level: 'Beginner',
-        duration: '6 weeks',
-        certification: true,
-        qrCode: '/assets/qr-c.png',
-        mentors: [
-          {
-            name: 'Anjali Verma',
-            photo: 'https://cdn.pixabay.com/photo/2021/09/24/02/48/girl-6651214_960_720.jpg',
-            bio: 'C programmer and educator with a focus on foundational logic.'
-          }
-        ]
+      {
+        name: 'Jane Doe',
+        photo: 'https://cdn.pixabay.com/photo/2018/01/15/07/51/woman-3083377_960_720.jpg',
+        bio: 'Senior Python Developer with 8+ years experience teaching coding to beginners.'
       }
-    };
+    ]
+  },
+  'python-numpy-pandas': {
+    title: 'Python with NumPy & Pandas',
+    description: 'Data analysis using NumPy and Pandas.',
+    level: 'Intermediate',
+    duration: '2 weeks',
+    certification: true,
+    qrCode: '/assets/qr-data.png',
+    mentors: [
+      {
+        name: 'Maria Chen',
+        photo: 'https://cdn.pixabay.com/photo/2018/01/15/07/51/woman-3083376_960_720.jpg',
+        bio: 'Data Scientist with expertise in Pandas and data viz.'
+      }
+    ]
+  },
+  'basic-c-programming': {
+    title: 'Basic C Programming',
+    description: 'Learn C syntax, data types, control structures, and functions. Ideal for beginners starting coding.',
+    level: 'Beginner',
+    duration: '6 weeks',
+    certification: true,
+    qrCode: '/assets/qr-c.png',
+    mentors: [
+      {
+        name: 'Anjali Verma',
+        photo: 'https://cdn.pixabay.com/photo/2021/09/24/02/48/girl-6651214_960_720.jpg',
+        bio: 'C programmer and educator with a focus on foundational logic.'
+      }
+    ]
+  }
+};
 
-// When any enroll button is clicked in the courses list (entry cards)
+// Show course details when enroll button clicked
 document.addEventListener("click", function (e) {
   const button = e.target.closest(".enroll-button");
   if (button) {
@@ -71,7 +71,7 @@ function showCourseDetail(courseId) {
 
   if (!course || !detailSection || !detailContent) return;
 
-  // Hide all sections
+  // Hide all non-detail sections
   document.querySelectorAll('section').forEach(section => {
     if (section.id !== 'course-detail') {
       section.classList.add('hidden');
@@ -95,7 +95,6 @@ function showCourseDetail(courseId) {
     `;
   });
 
-  // Course detail HTML (NOTE: ADD ENROLL BUTTON WITH CLASS AND DATA ATTR)
   detailContent.innerHTML = `
     <div class="course-header mb-8">
       <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold">${course.title}</h2>
@@ -133,60 +132,7 @@ function showCourseDetail(courseId) {
   `;
 }
 
-document.addEventListener("click", function(e) {
-  const button = document.querySelector('.enroll-now-button');
-  if (button) {
-    const courseId = button.dataset.course;
-    if (!courseId) return;
-
-    const token = localStorage.getItem("thriveher_token");
-    if (token) {
-      // User logged in - show course detail
-      showCourseDetail(courseId);
-      history.pushState(null, "", `#course-${courseId}`);
-    } else {
-      // User not logged in - show login modal, do NOT navigate
-      const loginModal = document.getElementById('loginModal');
-      if (typeof openModal === "function" && loginModal) {
-        openModal(loginModal);
-      } else if (loginModal) {
-        loginModal.classList.add('show');
-      }
-      window.scrollTo(0, detailSection.offsetTop - 80);
-    }
-    e.preventDefault();
-  }
-});
-
-
-  // Re-attach enroll event for the dynamic button
-// const enrollNowBtn = detailContent.querySelector('.enroll-now-button');
-//   if (enrollNowBtn) {
-//     enrollNowBtn.addEventListener('click', function (e) {
-//       e.preventDefault();
-
-//       const token = localStorage.getItem("thriveher_token");
-//       if (token) {
-//         // User is logged in: allow enroll (real API or demo alert)
-//         alert(`You have successfully enrolled in: ${course.title}`);
-//         // Optionally: call API, disable button, or show confirmation
-//       } else {
-//         // Not logged in: show login modal
-//         const loginModal = document.getElementById('loginModal');
-//         if (typeof openModal === "function" && loginModal) {
-//           openModal(loginModal);
-//         } else if (loginModal) {
-//           loginModal.classList.add('show'); // fallback
-//         }
-//       }
-//     });
-//   }
-
-//   // Scroll to details
-//   window.scrollTo(0, detailSection.offsetTop - 80);
-// }
-
-// Load detail on page load if hash exists
+// Load course detail from URL hash on page load
 window.addEventListener('DOMContentLoaded', () => {
   const hash = window.location.hash;
   if (hash.startsWith('#course-')) {
@@ -195,8 +141,10 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+
 document.addEventListener("DOMContentLoaded", () => {
   const backBtn = document.getElementById("back-to-courses");
+  const loginModal = document.getElementById("loginModal");
   const closeLoginBtn = document.getElementById("closeLoginModal");
 
   if (closeLoginBtn && loginModal) {
@@ -212,22 +160,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   if (backBtn) {
-    backBtn.addEventListener("click", function(e) {
+    backBtn.addEventListener("click", function (e) {
       e.preventDefault();
 
+      // Hide course detail section
       document.getElementById("course-detail").classList.add("hidden");
 
+      // Show all other sections
       document.querySelectorAll("section").forEach(section => {
         if (section.id !== "course-detail") {
           section.classList.remove("hidden");
         }
       });
 
+      // Scroll to courses section smoothly
       const courseSection = document.getElementById("courses");
       if (courseSection) {
         courseSection.scrollIntoView({ behavior: "smooth" });
       }
 
+      // Clear URL hash without adding new history entry
       history.replaceState(null, document.title, window.location.pathname + window.location.search);
     });
   }

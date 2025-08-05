@@ -35,6 +35,8 @@ function updateAuthUI() {
   const userGreeting = document.getElementById("userGreeting");
   const logoutBtn = document.getElementById("logoutBtn");
 
+  const dashboardLogin = document.getElementById("openLoginFromDashboard"); // Dashboard login link
+
   if (token) {
     let user = JSON.parse(localStorage.getItem("thriveher_user") || "null");
     if (!user) {
@@ -48,13 +50,16 @@ function updateAuthUI() {
     if (logoutBtn) logoutBtn.classList.remove("hidden");
     if (loginBtn) loginBtn.classList.add("hidden");
     if (signupBtn) signupBtn.classList.add("hidden");
+    if (dashboardLogin) dashboardLogin.style.display = "none";  // Hide login in dashboard
   } else {
     if (userGreeting) userGreeting.classList.add("hidden");
     if (logoutBtn) logoutBtn.classList.add("hidden");
     if (loginBtn) loginBtn.classList.remove("hidden");
     if (signupBtn) signupBtn.classList.remove("hidden");
+    if (dashboardLogin) dashboardLogin.style.display = "block"; // Show login in dashboard
   }
 }
+
 
 function initThreeScene() {
   // Stub for Three.js initialization
@@ -188,6 +193,7 @@ document.addEventListener("DOMContentLoaded", function () {
       openModal(loginModal);
     });
   }
+  //active links updation code
 
   // --- Close modals on clicking outside ---
   window.addEventListener("click", (e) => {

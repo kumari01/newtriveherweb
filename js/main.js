@@ -32,9 +32,8 @@ function updateAuthUI() {
   const token = localStorage.getItem("thriveher_token");
   const loginBtn = document.getElementById("loginBtn");
   const signupBtn = document.getElementById("signupBtn");
-  const userGreeting = document.getElementById("userGreeting");
-  const logoutBtn = document.getElementById("logoutBtn");
-
+  const userGreetings = document.querySelectorAll(".userGreeting");
+  const logoutBtns = document.querySelectorAll(".logoutBtn");
   const dashboardLogin = document.getElementById("openLoginFromDashboard"); // Dashboard login link
 
   if (token) {
@@ -43,20 +42,25 @@ function updateAuthUI() {
       const payload = parseJwt(token);
       user = payload ? { name: payload.name || payload.email || "User" } : { name: "User" };
     }
-    if (userGreeting) {
-      userGreeting.textContent = `Hi, ${user.name || user.email || "User"}!`;
-      userGreeting.classList.remove("hidden");
+    if (userGreetings) {
+      userGreetings.forEach(ug => {
+        ug.textContent = `Hi, ${user.name || user.email || "User"}!`;
+        // Do NOT change display style here
+      });
     }
-    if (logoutBtn) logoutBtn.classList.remove("hidden");
+    if (logoutBtns) logoutBtns.forEach(btn => btn.classList.remove("hidden"));
     if (loginBtn) loginBtn.classList.add("hidden");
     if (signupBtn) signupBtn.classList.add("hidden");
-    if (dashboardLogin) dashboardLogin.style.display = "none";  // Hide login in dashboard
+    if (dashboardLogin) dashboardLogin.style.display = "none";
   } else {
-    if (userGreeting) userGreeting.classList.add("hidden");
-    if (logoutBtn) logoutBtn.classList.add("hidden");
+    if (userGreetings) userGreetings.forEach(ug => {
+      ug.textContent = "";
+      // Do NOT change display style here; let CSS handle hiding
+    });
+    if (logoutBtns) logoutBtns.forEach(btn => btn.classList.add("hidden"));
     if (loginBtn) loginBtn.classList.remove("hidden");
     if (signupBtn) signupBtn.classList.remove("hidden");
-    if (dashboardLogin) dashboardLogin.style.display = "block"; // Show login in dashboard
+    if (dashboardLogin) dashboardLogin.style.display = "block";
   }
 }
 
@@ -106,6 +110,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const forgotPasswordMessage = document.getElementById("forgotPasswordMessage");
 
   const openForgotPassword = document.getElementById("openForgotPassword"); // Link in login modal
+
+  const startLearningBtn = document.getElementById("start-learning-btn");
+  if (startLearningBtn) {
+    startLearningBtn.addEventListener("click", () => {
+      openModal(signupModal);
+    });
+  }
 
   const getStartedBtn = document.getElementById('getStartedBtn');
   if (getStartedBtn) {

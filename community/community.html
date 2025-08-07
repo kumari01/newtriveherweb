@@ -46,26 +46,19 @@
         </a>
       </div>
 
+      <!-- User Action Buttons -->
       <div class="flex items-center gap-4 nav-button-group">
-        <span id="userGreeting" class="text-purple-700 font-semibold"></span>
-        <!-- <button
-            id="logoutBtn"
-            class="px-4 py-2 bg-gray-200 text-gray-700 font-medium rounded-full hover:bg-gray-300 transition-all"
-        >
-          Logout
-        </button> -->
-        <!-- <button class="md:hidden text-gray-700 focus:outline-none">
-            <i class="fas fa-bars text-2xl"></i>
-        </button> -->
-        <button class="hidden md:inline-block px-4 py-2 border-2 border-purple-500 text-purple-600 text-sm font-medium rounded-full hover:bg-purple-50 transition-all nav-login" id="loginBtn">
+        <span class="userGreeting text-purple-700 font-semibold"></span>
+        <!-- Log In & Sign Up should generally not be needed on dashboard, but if you want, keep with unique IDs -->
+        <button id="loginBtn" class="hidden md:inline-block px-4 py-2 border-2 border-purple-500 text-purple-600 text-sm font-medium rounded-full hover:bg-purple-50 transition-all" data-auth="login">
           Log In
         </button>
-        <button class="px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded-full hover:bg-purple-500 transition-all nav-signup" id="signupBtn">
+        <button id="signupBtn" class="hidden px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded-full hover:bg-purple-500 transition-all" data-auth="signup">
           Sign Up
         </button>
-        <!-- ✅ Shows only in tab view -->
-        <span id="userGreeting" class="hidden text-purple-700 font-semibold"></span>
-        <button id="logoutBtn" class="hidden px-4 py-1 border-2 border-purple-500 text-purple-700 font-medium rounded-full hover:bg-purple-50 transition-all">
+        <!-- Greeting for tab view etc. -->
+        <span class="userGreeting hidden text-purple-700 font-semibold"></span>
+        <button class="logoutBtn hidden px-4 py-1 border-2 border-purple-500 text-purple-700 font-medium rounded-full hover:bg-purple-50 transition-all">
           Logout
         </button>
         <button id="openDashboard" class="inline-block lg:hidden text-gray-700 focus:outline-non nav-dashboard py-7">
@@ -211,208 +204,8 @@
       </div>
   </footer>
 
-  <div class="modal" id="signupModal">
-    <div class="modal-content max-w-md md:max-w-lg w-full px-6 py-8">
-      <button class="modal-close" id="closeSignupModal">
-        <i class="fas fa-times"></i>
-      </button>
-      <h2 class="text-2xl font-bold mb-2 gradient-text">Join TriveHer</h2>
-      <p class="text-gray-600 mb-6">Start your coding journey today!</p>
-
-      <form id="signupForm">
-        <div class="form-group">
-          <label for="name" class="block mb-2 text-gray-700">Full Name</label>
-          <input type="text" id="name" class="form-control" placeholder="Enter your name">
-        </div>
-        <div class="form-group">
-          <label for="email" class="block mb-2 text-gray-700">Email Address</label>
-          <input type="email" id="email" class="form-control" placeholder="Enter your email">
-        </div>
-        <div class="form-group">
-          <label for="password" class="block mb-2 text-gray-700">Password</label>
-          <input type="password" id="password" class="form-control" placeholder="Create a password">
-        </div>
-        <div class="form-group">
-          <label for="age" class="block mb-2 text-gray-700">Age</label>
-          <select id="age" class="form-control">
-            <option value="" disabled selected>Select your age range</option>
-            <option value="8-12">8-12 years</option>
-            <option value="13-15">13-15 years</option>
-            <option value="16-18">16-18 years</option>
-            <option value="19+">19+ years</option>
-          </select>
-        </div>
-        <button type="submit" class="btn-primary w-full justify-center">Create Account</button>
-      </form>
-
-      <div class="mt-6 text-center text-gray-600">
-        Already have an account? <a href="javascript:void(0)" class="text-purple-600 font-medium" id="switchToLogin">Log In</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Login Modal -->
-  <div class="modal" id="loginModal">
-    <div class="modal-content">
-      <button class="modal-close" id="closeLoginModal">
-        <i class="fas fa-times"></i>
-      </button>
-      <h2 class="text-2xl font-bold mb-2 gradient-text">Welcome Back!</h2>
-      <p class="text-gray-600 mb-6">Continue your coding journey</p>
-
-      <form id="loginForm">
-        <div class="form-group">
-          <label for="loginEmail" class="block mb-2 text-gray-700">Email Address</label>
-          <input type="email" id="loginEmail" class="form-control" placeholder="Enter your email">
-        </div>
-        <div class="form-group">
-          <label for="loginPassword" class="block mb-2 text-gray-700">Password</label>
-          <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password">
-        </div>
-        <div class="flex justify-between items-center mb-6">
-          <div class="flex items-center">
-            <input type="checkbox" id="remember" class="mr-2">
-            <label for="remember" class="text-gray-600">Remember me</label>
-          </div>
-          <a href="javascript:void(0)" id="openForgotPassword" class="text-purple-600 text-sm">Forgot password?</a>
-        </div>
-        <button type="submit" class="btn-primary w-full justify-center">Log In</button>
-      </form>
-
-      <div class="mt-6 text-center text-gray-600">
-        Don't have an account? <a href="javascript:void(0)" class="text-purple-600 font-medium" id="switchToSignup">Sign Up</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Community Join Modal -->
-  <div class="modal" id="communityModal">
-    <div class="modal-content">
-      <button class="modal-close" id="closeCommunityModal">
-        <i class="fas fa-times"></i>
-      </button>
-      <h2 class="text-2xl font-bold mb-2 gradient-text">Join Our Community</h2>
-      <p class="text-gray-600 mb-6">Connect with fellow coders and mentors</p>
-
-      <div class="bg-gray-50 p-6 rounded-xl mb-6">
-        <h3 class="font-bold mb-2">Community Benefits:</h3>
-        <ul class="space-y-2">
-          <li class="flex items-center gap-2">
-            <i class="fas fa-check-circle text-green-500"></i>
-            <span>Weekly coding challenges</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <i class="fas fa-check-circle text-green-500"></i>
-            <span>Live mentoring sessions</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <i class="fas fa-check-circle text-green-500"></i>
-            <span>Project feedback from professionals</span>
-          </li>
-          <li class="flex items-center gap-2">
-            <i class="fas fa-check-circle text-green-500"></i>
-            <span>Exclusive learning resources</span>
-          </li>
-        </ul>
-      </div>
-      <div>
-        <a href="../community/community.html"><button type="submit" class="btn-primary w-full justify-center">Join Community</button></a>
-      </div>
-    </div>
-  </div>
-  <!-- Forgot Password Modal -->
-  <div class="modal" id="forgotPasswordModal">
-    <div class="modal-content">
-      <button class="modal-close" id="closeForgotPasswordModal">
-        <i class="fas fa-times"></i>
-      </button>
-      <h2 class="text-2xl font-bold mb-2 gradient-text">Reset Password</h2>
-      <p class="text-gray-600 mb-6">
-        Enter your registered email address. We’ll send you instructions to reset your password.
-      </p>
-      <form id="forgotPasswordForm">
-        <div class="form-group">
-          <label for="forgotEmail" class="block mb-2 text-gray-700">Email Address</label>
-          <input
-            type="email"
-            id="forgotEmail"
-            class="form-control"
-            placeholder="Enter your email"
-            required
-          />
-        </div>
-        <button type="submit" class="btn-primary w-full justify-center">
-          Send Reset Link
-        </button>
-      </form>
-      <div class="mt-8 text-center text-gray-500 text-sm py-5" id="forgotPasswordMessage"></div>
-    </div>
-  </div>
-
-  <!-- OTP Modal -->
-  <div class="modal" id="otpModal">
-    <div class="modal-content">
-      <button class="modal-close" id="closeOtpModal" aria-label="Close OTP Modal">
-        <i class="fas fa-times"></i>
-      </button>
-
-      <h2 class="text-2xl font-bold mb-2 gradient-text">Verify OTP</h2>
-      <p class="text-gray-600 mb-6">
-        Enter the 6-digit code sent to your email
-      </p>
-
-      <form id="otpForm">
-        <div class="form-group">
-          <label for="otpInput" class="block mb-2 text-gray-700">OTP</label>
-          <input
-            type="text"
-            id="otpInput"
-            class="form-control"
-            placeholder="Enter OTP"
-            maxlength="6"
-            required
-            inputmode="numeric"
-            pattern="\d{6}"
-            autocomplete="one-time-code"
-            aria-describedby="otpEmailInfo"
-          />
-        </div>
-
-        <button type="submit" class="btn-primary w-full justify-center">
-          Verify
-        </button>
-      </form>
-
-      <div
-        class="mt-4 text-center text-gray-500 text-sm py-5"
-        id="otpEmailInfo"
-        aria-live="polite"
-      ></div>
-    </div>
-  </div>
-  <!-- New Password Modal -->
-  <div class="modal" id="newPasswordModal">
-    <div class="modal-content max-w-md">
-      <button class="modal-close" id="closeNewPasswordModal">
-        <i class="fas fa-times"></i>
-      </button>
-      <h2 class="text-2xl font-bold mb-2 gradient-text">Reset Password</h2>
-      <p class="text-gray-600 mb-6">Enter your new password below.</p>
-      <form id="newPasswordForm">
-        <div class="form-group">
-          <label for="newPassword" class="block mb-2 text-gray-700">New Password</label>
-          <input type="password" id="newPassword" class="form-control" placeholder="New Password" minlength="6" required autocomplete="new-password" />
-        </div>
-        <div class="form-group">
-          <label for="confirmPassword" class="block mb-2 text-gray-700">Confirm Password</label>
-          <input type="password" id="confirmPassword" class="form-control" placeholder="Confirm Password" minlength="6" required autocomplete="new-password" />
-        </div>
-        <button type="submit" class="btn-primary w-full justify-center">Reset Password</button>
-      </form>
-      <div class="mt-4 text-center text-gray-500 text-sm py-5" id="newPasswordMessage"></div>
-    </div>
-  </div>
-  <script src = "../js/dashboard.js"></script>
-  <script src = "../js/main.js"></script>
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/auth-modal.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 </html>

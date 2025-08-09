@@ -71,3 +71,24 @@
 .btn-primary:hover {
     background: #7E22CE;
 }
+
+.btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background: #F3F4F6;
+    color: #374151;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.btn-secondary:hover {
+    background: #E5E7EB;
+    color: #1F2937;
+}
+
+#course-detail-modal .modal-content {
+    max-width: 48rem;
+    padding: 2rem;
+}

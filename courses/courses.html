@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TriveHer - Girls Who Code</title>
+    <title>Courses - TriveHer</title>
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,8 +25,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
 
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
   <nav class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-lg z-50 py-4">
@@ -55,14 +53,12 @@
       <!-- User Action Buttons -->
       <div class="flex items-center gap-4 nav-button-group">
         <span class="userGreeting text-purple-700 font-semibold"></span>
-        <!-- Log In & Sign Up should generally not be needed on dashboard, but if you want, keep with unique IDs -->
         <button id="loginBtn" class="hidden md:inline-block px-4 py-2 border-2 border-purple-500 text-purple-600 text-sm font-medium rounded-full hover:bg-purple-50 transition-all" data-auth="login">
           Log In
         </button>
         <button id="signupBtn" class="hidden px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded-full hover:bg-purple-500 transition-all" data-auth="signup">
           Sign Up
         </button>
-        <!-- Greeting for tab view etc. -->
         <span class="userGreeting hidden text-purple-700 font-semibold"></span>
         <button class="logoutBtn hidden px-4 py-1 border-2 border-purple-500 text-purple-700 font-medium rounded-full hover:bg-purple-50 transition-all">
           Logout
@@ -95,88 +91,20 @@
 
   <section id="courses" class="mt-20 py-5 bg-gray-50/50 relative">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-10 sm:mb-16">
-            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mt-8 sm:mt-12 lg:mt-0 mb-8 sm:mb-10 lg:mb-0 gradient-text">Our Courses</h2>
-            <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+      <div class="text-center mb-10 sm:mb-16">
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mt-8 sm:mt-12 lg:mt-0 mb-8 sm:mb-10 lg:mb-0 gradient-text">Our Courses</h2>
+        <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
           Begin your coding journey with our expertly crafted courses designed specifically for girls who code.
-            </p>
-         </div>
+        </p>
+      </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Python Basics Course -->
-        <div class="feature-card p-6 sm:p-7 lg:p-8">
-          <div class="feature-icon">
-            <i class="fab fa-python"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-4">Python Basics</h3>
-          <p class="text-gray-600 mb-6">Learn the fundamentals of Python programming, including variables, data types,
-            control flow, functions, and more. Perfect for beginners with no prior coding experience.</p>
-          <div class="flex gap-3 mb-6">
-            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Beginner</span>
-            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">8 weeks</span>
-            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Certificate</span>
-          </div>
-          <div class="flex gap-4 items-center mb-6">
-            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">₹499</span>
-            <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">3+ Mini Projects</span>
-          </div>
-          <button class="enroll-button flex items-center justify-center gap-2 btn-primary" data-course="python-basics">
-            <i class="fas fa-graduation-cap"></i>
-            <span>Enroll Now</span>
-          </button>
-
-        </div>
-
-        <!-- Python with NumPy & Pandas Course -->
-        <div class="feature-card p-6 sm:p-7 lg:p-8">
-          <div class="feature-icon">
-            <i class="fas fa-chart-line"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-4">Python with NumPy & Pandas</h3>
-          <p class="text-gray-600 mb-6">Advance your Python skills with real-world data analysis using NumPy and Pandas. Learn to clean, manipulate, and visualize data effectively.</p>
-          <div class="flex gap-3 mb-6">
-            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Intermediate</span>
-            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">2 weeks</span>
-            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Certificate</span>
-          </div>
-          <div class="flex gap-4 items-center mb-6">
-            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">₹659</span>
-            <span class="bg-cyan-100 text-cyan-600 px-3 py-1 rounded-full text-sm">3+ Mini Projects</span>
-
-          </div>
-          <button class="enroll-button flex items-center justify-center gap-2 btn-primary" data-course="python-numpy-pandas">
-            <i class="fas fa-graduation-cap"></i>
-            <span>Enroll Now</span>
-          </button>
-
-        </div>
-        <!-- basic c program-->
-        <div class="feature-card p-6 sm:p-7 lg:p-8">
-          <div class="feature-icon">
-            <i class="fas fa-code"></i>
-          </div>
-          <h3 class="text-2xl font-bold mb-4">Basic C Programming</h3>
-          <p class="text-gray-600 mb-6">Learn the basics of C programming, including syntax, data types, control structures, and functions. Ideal for beginners looking to start their coding journey.</p>
-          <div class="flex gap-3 mb-6">
-            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm">Beginner</span>
-            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm">6 weeks</span>
-            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm">Certificate</span>
-          </div>
-          <div class="flex gap-4 items-center mb-6">
-            <!-- <button class="btn-primary text-base sm:text-lg px-6 py-3 enroll-button" data-course="basic-c-programming">Enroll Now</button> -->
-            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">₹499</span>
-            <span class="bg-cyan-100 text-cyan-600 s px-3 py-1 rounded-full text-sm">3+ Mini Projects</span>
-
-          </div>
-          <button class="enroll-button flex items-center justify-center gap-2 btn-primary" data-course="basic-c-programming">
-            <i class="fas fa-graduation-cap"></i>
-            <span>Enroll Now</span>
-          </button>
-
-        </div>
+      <!-- Added id "course-grid" here -->
+      <div id="course-grid" class="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-8">
+        <!-- Course cards will be dynamically inserted here -->
       </div>
     </div>
   </section>
+
   <!-- Course Detail Section -->
   <section id="course-detail" class="mt-28 bg-gray-50/50 hidden">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -253,11 +181,11 @@
       </div>
     </div>
   </footer>
-
-
+ <!-- Core Scripts - order is important -->
+  <script src="../js/course-data.js"></script>
   <script src="../js/course.js"></script>
-  <script src="../js/dashboard.js"></script>
-  <script src = "../js/auth-modal.js"></script>
   <script src="../js/main.js"></script>
+  <script src="../js/auth-modal.js"></script>
+  <script src="../js/dashboard.js"></script>
 </body>
 </html>

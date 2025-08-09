@@ -214,8 +214,82 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!document.getElementById("signupModal")) {
       document.body.insertAdjacentHTML("beforeend", modalMarkup);
     }
+
+    // Add event listeners for auth buttons
+    document.getElementById('loginBtn')?.addEventListener('click', function() {
+      document.getElementById('loginModal').classList.add('show');
+    });
+
+    document.getElementById('signupBtn')?.addEventListener('click', function() {
+      document.getElementById('signupModal').classList.add('show');
+    });
+
+    // Add event listeners for close buttons
+    document.getElementById('closeLoginModal')?.addEventListener('click', function() {
+      document.getElementById('loginModal').classList.remove('show');
+    });
+
+    document.getElementById('closeSignupModal')?.addEventListener('click', function() {
+      document.getElementById('signupModal').classList.remove('show');
+    });
+
+    // Add switch between login and signup
+    document.getElementById('switchToLogin')?.addEventListener('click', function() {
+      document.getElementById('signupModal').classList.remove('show');
+      document.getElementById('loginModal').classList.add('show');
+    });
+
+    document.getElementById('switchToSignup')?.addEventListener('click', function() {
+      document.getElementById('loginModal').classList.remove('show');
+      document.getElementById('signupModal').classList.add('show');
+    });
+
+    // Close modal when clicking outside
+    window.addEventListener('click', function(e) {
+      if (e.target.classList.contains('modal')) {
+        e.target.classList.remove('show');
+      }
+    });
+
     if (typeof initializeModalLogic === "function") {
       initializeModalLogic();
     }
-  });
-  
+});
+
+// Add showToast function
+function showToast(message, type = 'error') {
+  // Remove existing toast if any
+  const existingToast = document.querySelector('.toast');
+  if (existingToast) {
+    existingToast.remove();
+  }
+
+  // Create new toast element
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+
+  // Add icon based on type
+  const icon = type === 'error' ? 'fa-exclamation-circle' : 'fa-check-circle';
+  toast.innerHTML = `<i class="fas ${icon} toast-icon"></i><span class="toast-message">${message}</span>`;
+
+  // Append toast to body
+  document.body.appendChild(toast);
+
+  // Show toast animation
+  requestAnimationFrame(() => toast.classList.add('show'));
+
+  // Hide and remove toast after 3 seconds
+  setTimeout(() => {
+    toast.classList.remove('show');
+    toast.addEventListener('transitionend', () => toast.remove());
+  }, 3000);
+}
+
+// Update the click handlers
+document.addEventListener('click', function(e) {
+  if (e.target.matches('[data-auth="login"]')) {
+    showModal('login');
+  } else if (e.target.matches('[data-auth="signup"]')) {
+    showModal('signup');
+  }
+});

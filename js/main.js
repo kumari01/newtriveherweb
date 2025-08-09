@@ -319,7 +319,12 @@ document.addEventListener("DOMContentLoaded", function () {
             closeModal(loginModal);
             loginForm.reset();
             updateAuthUI();
-            window.location.href = "dashboard.html";
+            // Use the handleLoginRedirect function from dashboard.js
+            if (typeof window.handleLoginRedirect === 'function') {
+                window.handleLoginRedirect();
+            } else {
+                window.location.href = '../dashboard.html';
+            }
           }, 1200);
         } else {
           showFormMessage(loginForm, data.message || "Login failed.");

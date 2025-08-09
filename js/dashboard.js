@@ -1,3 +1,23 @@
+// Function to handle successful login redirect
+function handleLoginRedirect() {
+    // Get the current page path
+    const currentPath = window.location.pathname;
+
+    // If we're in a subdirectory (like /resources/), go up one level
+    if (currentPath.includes('/resources/') ||
+        currentPath.includes('/courses/') ||
+        currentPath.includes('/community/') ||
+        currentPath.includes('/mentor/')) {
+        window.location.href = '../dashboard.html';
+    } else {
+        // If we're at the root level
+        window.location.href = 'dashboard.html';
+    }
+}
+
+// Make the function available globally
+window.handleLoginRedirect = handleLoginRedirect;
+
 document.addEventListener("DOMContentLoaded", function () {
   const loginBtn = document.getElementById("loginBtn");
   const signupBtn = document.getElementById("signupBtn");

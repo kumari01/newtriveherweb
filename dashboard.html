@@ -106,10 +106,10 @@
 
   <main class="pt-32 pb-20 container mx-auto px-4 sm:px-6 lg:px-8">
     <!-- Enrolled Courses Section -->
-    <section id="enrolled-courses" class="mb-16" tabindex="-1">
+    <!-- <section id="enrolled-courses" class="mb-16" tabindex="-1">
       <h2 class="text-2xl font-bold mb-8 gradient-text">Enrolled Courses</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Example Enrolled Course Card -->
+
         <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
           <div class="mb-4">
             <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">Beginner</span>
@@ -118,81 +118,120 @@
           <p class="text-gray-600 mb-4">Your class is scheduled for today.</p>
           <button class="mt-auto bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-all continue-course-btn">Continue Course</button>
         </div>
-        <!-- Add more enrolled course cards as needed -->
+
       </div>
-    </section>
+    </section> -->
     <!-- Recommended Courses Section (Cards) -->
     <section id="recommended-courses" class="mb-16" tabindex="-1">
       <h2 id="recommendedCoursesHeading" class="text-2xl font-bold mb-8 gradient-text">Recommended Courses</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Example Course Card: Replace with dynamic content from courses.html in future -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+        <!-- Python Basics Course -->
         <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
-          <div class="mb-4">
+          <div class="mb-4 flex gap-2 flex-wrap">
             <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">Beginner</span>
+            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">8 weeks</span>
+            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">Certificate</span>
           </div>
-          <h3 class="font-semibold text-lg mb-2">Intro to Python</h3>
-          <p class="text-gray-600 mb-4">Start your coding journey with Python basics and hands-on projects.</p>
-          <button class="mt-auto bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-all view-course-btn" data-course="python">View Course</button>
+          <div class="text-purple-600 text-2xl mb-3">
+            <i class="fab fa-python"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Python Basics</h3>
+          <p class="text-gray-600 mb-4">Learn the fundamentals of Python programming, perfect for beginners with no prior coding experience.</p>
+          <button class="mt-auto bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-all view-course-btn" data-course="python-foundation">View Course</button>
         </div>
+
+        <!-- Python with NumPy & Pandas Course -->
         <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
-          <div class="mb-4">
-            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Web Dev</span>
+          <div class="mb-4 flex gap-2 flex-wrap">
+            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-semibold">Intermediate</span>
+            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">2 weeks</span>
+            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">Certificate</span>
           </div>
-          <h3 class="font-semibold text-lg mb-2">HTML & CSS Fundamentals</h3>
-          <p class="text-gray-600 mb-4">Learn to build beautiful websites with HTML and CSS from scratch.</p>
-          <button class="mt-auto bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-all view-course-btn" data-course="htmlcss">View Course</button>
-        </div>
-        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
-          <div class="mb-4">
-            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">Project</span>
+          <div class="text-purple-600 text-2xl mb-3">
+            <i class="fas fa-chart-line"></i>
           </div>
-          <h3 class="font-semibold text-lg mb-2">Build Your Portfolio Website</h3>
-          <p class="text-gray-600 mb-4">Apply your skills to create a personal portfolio and showcase your work.</p>
-          <button class="mt-auto bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-all view-course-btn" data-course="portfolio">View Course</button>
+          <h3 class="font-semibold text-lg mb-2">Python with NumPy & Pandas</h3>
+          <p class="text-gray-600 mb-4">Advance your Python skills with real-world data analysis using NumPy and Pandas.</p>
+          <button class="mt-auto bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition-all view-course-btn" data-course="python-numpy-pandas">View Course</button>
         </div>
-        <!-- Add more cards dynamically as needed -->
       </div>
     </section>
     <!-- Announcements Section -->
     <section class="mb-16" id="announcements" tabindex="-1">
-      <div class="bg-white rounded-2xl shadow-lg p-8 mb-8" role="region" aria-labelledby="announcementsHeading">
-        <h2 id="announcementsHeading" class="text-2xl font-bold mb-4 gradient-text">Announcements</h2>
-        <ul class="list-disc pl-6 text-gray-700">
-          <li>Welcome to your dashboard! Stay tuned for upcoming events and updates.</li>
-          <li>New course: "Intro to Python" launching next week!</li>
-          <li>Community challenge: Build a personal portfolio website. Submit by end of month.</li>
-        </ul>
+      <h2 id="announcementsHeading" class="text-2xl font-bold mb-8 gradient-text">Announcements</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <div class="mb-4 flex gap-2">
+            <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-semibold">New</span>
+          </div>
+          <div class="text-purple-600 text-2xl mb-3">
+            <i class="fas fa-bell"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Welcome!</h3>
+          <p class="text-gray-600">Welcome to your dashboard! Stay tuned for upcoming events and updates.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <div class="mb-4 flex gap-2">
+            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-semibold">Course Update</span>
+          </div>
+          <div class="text-purple-600 text-2xl mb-3">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">New Course Launch</h3>
+          <p class="text-gray-600">"Python Basics" launching next week! Get ready to start your coding journey.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <div class="mb-4 flex gap-2">
+            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">Challenge</span>
+          </div>
+          <div class="text-purple-600 text-2xl mb-3">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Community Challenge</h3>
+          <p class="text-gray-600">Build a personal portfolio website. Submit by end of month for exciting rewards!</p>
+        </div>
       </div>
-    </section>
     </section>
 
-    <!-- Community Section -->
-    <section class="py-12 bg-gray-50/50 relative" id="community" tabindex="-1">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            Community
-          </h2>
-          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
-            Become part of an empowering community of girls who code, share projects, and grow together.
-          </p>
-        </div>
-        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
-          <div class="bg-gray-100 rounded-lg p-4 mb-6">
-            <div class="text-sm text-gray-500 mb-1">Next community event:</div>
-            <div class="font-medium">Code & Coffee - Virtual Meetup</div>
-            <div class="text-sm text-purple-600">Saturday, 10:00 AM EST</div>
+    <!-- Why TriveHer Section -->
+    <section class="mb-16" id="why-triveher" tabindex="-1">
+      <h2 class="text-2xl font-bold mb-8 gradient-text">Why TriveHer</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <div class="text-purple-600 text-3xl mb-4">
+            <i class="fas fa-video"></i>
           </div>
-          <a
-            href="#"
-            class="text-purple-600 font-medium flex items-center gap-2 hover:text-purple-700"
-            id="joinCommunityBtn"
-          >
-            <span>Join now</span>
-            <i class="fas fa-arrow-right text-sm"></i>
-          </a>
+          <h3 class="font-semibold text-lg mb-2">Live Classes</h3>
+          <p class="text-gray-600">Interactive live sessions with real-time doubt clearing and hands-on practice.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <div class="text-purple-600 text-3xl mb-4">
+            <i class="fas fa-project-diagram"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Project-Based Learning</h3>
+          <p class="text-gray-600">Build real-world projects to strengthen your portfolio and gain practical experience.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <div class="text-purple-600 text-3xl mb-4">
+            <i class="fas fa-user-graduate"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Personal Mentor</h3>
+          <p class="text-gray-600">Dedicated mentors to guide you through your learning journey and career path.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-lg p-6 flex flex-col">
+          <div class="text-purple-600 text-3xl mb-4">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3 class="font-semibold text-lg mb-2">Clear Explanation</h3>
+          <p class="text-gray-600">Complex concepts broken down into simple, easy-to-understand lessons.</p>
         </div>
       </div>
+    </section>
     </section>
   </main>
   <footer class="bg-gray-50 py-16">
@@ -324,5 +363,7 @@
       });
 
     </script>
+    <script src="js/course-data.js"></script>
+    <script src="js/course-interactions.js"></script>
   </body>
 </html>
